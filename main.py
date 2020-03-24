@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 def convert_big_number2(nb):
     """
         Convert string in a form $XX.YYM or $XX.YYB into a numeric type to make possible future calculation
@@ -21,7 +20,6 @@ def convert_big_number2(nb):
     else:
         return 0
 
-
 def calc_ratio(nb_list):
     """
     Calculate a ration between nb[1] / nb[0] in %
@@ -34,7 +32,6 @@ def calc_ratio(nb_list):
         return 0
     else:
         return round(nb_list[1] / nb_list[0] * 100, 2)
-
 
 def columns_list(csv_uri, sep):
     """
@@ -104,8 +101,6 @@ def read_csv(csv_uri, sep):
     # apply calc_ration to recalculation the values in this column
     df['ratio'] = df[['2018', '2019']].apply(calc_ratio, axis=1)
     # compare the gain with the original df w/o optimization
-    compare_df_gain(csv_uri, sep, df)
-
 
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
